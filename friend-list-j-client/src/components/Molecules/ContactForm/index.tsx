@@ -11,21 +11,24 @@ export function ContactForm() {
     const [contactPhone, setContactPhone] = useState<string>("")
     const [contactAddress, setContactAddress] = useState<string>("")
     
-    const {addContactToList} = useContext(ContactContext)
+    const {refreshContacts, } = useContext(ContactContext)
     
     const createContact = async (evt:FormEvent) => {
         evt.preventDefault()
         
         const newContact: Contact = {
+            id: "",
             name: contactName,
             phone: contactPhone,
             address: contactAddress
         }
 
-        const responseInsertData = await insertContact(newContact)
-        addContactToList(responseInsertData?.data)
-        console.log(responseInsertData?.data)
-        console.log(newContact)
+        await insertContact(newContact)
+        refreshContacts()
+
+        setContactName("")
+        setContactPhone("")
+        setContactAddress("")
     }
     
     return (

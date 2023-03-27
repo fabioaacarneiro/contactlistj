@@ -15,7 +15,7 @@ export const findAll = async () => {
     }
 }
 
-export const deleteContact = async (id:number) => {
+export const deleteContact = async (id: string) => {
     try {
         return await api.delete(`/${id}`)
     } catch (error) {
@@ -25,7 +25,7 @@ export const deleteContact = async (id:number) => {
     }
 }
 
-export const updateContact = async (id: number, contact: Contact) => {
+export const updateContact = async (id: string, contact: Contact) => {
     try {
         return await api.put(`/${id}`, contact)
     } catch (error) {

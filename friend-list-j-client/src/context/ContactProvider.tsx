@@ -1,8 +1,9 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
+import { findAll } from "../assets/ts/api";
 import { Contact, IContextContact } from "../assets/ts/types";
 
 interface Props {
-    children: JSX.Element | JSX.Element[]
+    children: React.ReactNode
 }
 
 export const ContactContext = createContext<IContextContact>({} as IContextContact)
@@ -15,16 +16,21 @@ export function ContactProvider({children}: Props ) {
 
     const [contacts, setContacts] = useState<Contact[]>([]);
 
-    const setAllContacts = (contacts: Contact[]) => {
-        setContacts(contacts)
+    const getContacts = async () => {
+        const response = await findAll()
+        setContacts(response?.data)
     }
 
-    const addContactToList = (contact: Contact) => {
-        setContacts((contacts) => [...contacts, contact])
+    useEffect(() => {
+        getContacts()
+    }, [])
+
+    const refreshContacts = () => {
+        getContacts()
     }
-    
+
     return (
-        <ContactContext.Provider value={{contacts, setAllContacts, addContactToList}}>
+        <ContactContext.Provider value={{contacts, refreshContacts}}>
             {children}
         </ContactContext.Provider>
     )

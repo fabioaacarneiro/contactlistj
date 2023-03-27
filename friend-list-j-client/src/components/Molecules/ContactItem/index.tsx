@@ -4,6 +4,7 @@ import { ContactName } from "../../Atoms/ContactName"
 
 import "./style.scss"
 import { Contact } from "../../../assets/ts/types"
+import { DeleteContactButton } from "../../Atoms/DeleteContactButton"
 
 type Props = {
     contact: Contact
@@ -15,6 +16,7 @@ export function ContactItem({contact}: Props) {
             <ContactName value={contact.name} />
             <ContactPhone value={contact.phone} />
             <ContactAddress value={contact.address} />
+            <DeleteContactButton id={contact.id} />
         </li>
     )
 }
