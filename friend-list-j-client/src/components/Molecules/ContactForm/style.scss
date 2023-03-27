@@ -5,14 +5,15 @@
     justify-items: center;
     margin: auto;
     padding: 10px;
-
+    
     form {
         margin: auto;
         
         input {
-            border: none;
+            transition: all .5s ease-in-out;
+            border: 1px solid transparent;
             border-radius: 5px;
-            background-color: #ddd;
+            background-color: #eee;
             font-size: 1.1rem;
             display: block;
             height: 2rem;
@@ -21,7 +22,8 @@
             margin: 15px 0;
 
             &:hover {
-                background-color: #ccc;
+                background-color: #eef;
+                border: 1px solid #bbf;
             }
         }
 
@@ -32,12 +34,13 @@
             text-align: center;
             margin: auto;
             padding: auto;
-            border: none;
+            border: 1px solid transparent;
             border-radius: 5px;
-            background-color: #ddd;
+            background-color: #eee;
 
             &:hover {
-                background-color: #ccc;
+                background-color: #efe;
+                border: 1px solid #bfb;
             }
         }
     }
