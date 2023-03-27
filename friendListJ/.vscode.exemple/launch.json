@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "FriendListJApplication",
+            "request": "launch",
+            "mainClass": "com.fabioaacarneiro.friendListJ.FriendListJApplication",
+            "projectName": "friendListJ",
+            "env": {
+                "DBUSER": "your_database_user",
+                "DBPASS": "your_database_password",
+                "DBURL": "localhost:3306",
+                "DBNAME": "friend_list_j",
+                "DBDRIVER": "com.mysql.cj.jdbc.Driver"
+            }
+        }
+    ]
+}

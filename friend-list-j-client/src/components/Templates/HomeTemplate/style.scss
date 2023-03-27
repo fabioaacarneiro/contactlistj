@@ -1,0 +1,34 @@
+.contact-list-template {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(3, 220px, auto, 65px);
+    gap: 15px;
+
+    .header-container {
+        max-height: 250px;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        align-self: center;
+    }
+
+    .content-container {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        align-self: center;
+    }
+
+    .footer-container {
+        max-height: 70px;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        align-self: center;
+    }
+}
