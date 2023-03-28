@@ -13,9 +13,9 @@ export function ContactList() {
     }, [])
 
     return (
-        <ul className="contact-list">
-            {contacts?.map((contact, index, array) => {
-                return <ContactItem key={contact.id} contact={array[array.length - index - 1]} /> 
+        <ul className="contact-list"> 
+            {contacts?.map((contact) => {
+                return <ContactItem key={contact.id} contact={contact} />
             })}
         </ul>
     )
