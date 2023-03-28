@@ -7,6 +7,7 @@ interface Props {
 }
 
 export const ContactContext = createContext<IContextContact>({} as IContextContact)
+
 export const useContactContext = () => {
     const context = useContext(ContactContext)
     return context
@@ -25,12 +26,18 @@ export function ContactProvider({children}: Props ) {
         getContacts()
     }, [])
 
+    let editingContact
+
+    const setEditingContact = (contact: Contact) => {
+        editingContact = contact
+    }
+
     const refreshContacts = () => {
         getContacts()
     }
 
     return (
-        <ContactContext.Provider value={{contacts, refreshContacts}}>
+        <ContactContext.Provider value={{contacts, editingContact, setEditingContact, refreshContacts}}>
             {children}
         </ContactContext.Provider>
     )

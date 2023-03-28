@@ -15,6 +15,16 @@ export const findAll = async () => {
     }
 }
 
+export const findContactById = async (id: string) => {
+    try {
+        return await api.get(`${id}`)
+    } catch (error) {
+        if (error instanceof Error) {
+            console.error(error)
+        }
+    }
+}
+
 export const deleteContact = async (id: string) => {
     try {
         return await api.delete(`/${id}`)

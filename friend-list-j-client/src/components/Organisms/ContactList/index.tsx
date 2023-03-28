@@ -1,8 +1,5 @@
-import { useContext, useEffect, useState } from "react"
-import { findAll } from "../../../assets/ts/api"
-import { Contact } from "../../../assets/ts/types"
+import { useContext, useEffect } from "react"
 import { ContactContext } from "../../../context/ContactProvider"
-import { DeleteContactButton } from "../../Atoms/DeleteContactButton"
 import { ContactItem } from "../../Molecules/ContactItem"
 
 import "./style.scss"
@@ -17,15 +14,9 @@ export function ContactList() {
 
     return (
         <ul className="contact-list">
-        {contacts?.map((contact) => {
-            return (
-                <div>
-                    <ContactItem key={contact.id}
-                        contact={contact} 
-                    />
-                </div>
-            )
-        })}
-    </ul>
+            {contacts?.map((contact, index, array) => {
+                return <ContactItem key={contact.id} contact={array[array.length - index - 1]} /> 
+            })}
+        </ul>
     )
 }

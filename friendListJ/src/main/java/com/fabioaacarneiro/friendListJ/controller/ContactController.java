@@ -30,12 +30,6 @@ public class ContactController {
        return ResponseEntity.ok().body(contacts);
     }
 
-    @GetMapping(value = "/{name}")
-    public ResponseEntity<Contact> findByName(@PathVariable String name) {
-        Contact contact = service.findByName(name);
-        return ResponseEntity.ok().body(contact);
-    }
-
     @GetMapping(value = "/{id}")
     public ResponseEntity<Contact> findById(@PathVariable Long id) {
         Contact contact = service.findById(id);

@@ -8,5 +8,7 @@ export interface Contact {
 
 export interface IContextContact {
     contacts: Contact[]
+    editingContact?: Contact
+    setEditingContact: (contact: Contact) => void
     refreshContacts: () => void
 }

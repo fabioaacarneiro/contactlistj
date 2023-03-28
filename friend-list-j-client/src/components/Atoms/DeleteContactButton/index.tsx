@@ -14,9 +14,10 @@ export function DeleteContactButton({id}: Props) {
     
     const deleteContactButton = async (id: string) => {
         await deleteContact(id)
-        console.log(id)
+        
         refreshContacts()
     }
+
     return (
         <Fragment>
             <button className="delete-button" onClick={() => deleteContactButton(id)}>Excluir</button>
