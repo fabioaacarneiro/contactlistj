@@ -38,7 +38,7 @@ and React with typescript and scss on frontend
 </p>
 
 <p align="center">
-  <img src="" width="550" title="img example">
+  <img src="https://github.com/fabioaacarneiro/contactlistj/blob/master/img/img-friendlistj.png" width="550" title="img example">
 </p>
 
 <p align="center">
