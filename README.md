@@ -32,7 +32,6 @@ and React with typescript and scss on frontend
 <li>react 18.2.0</li>
 <li>react-dom 18.2.0</li>
 <li>react-router-dom 6.9.0</li>
-<li>-> vue3 composition with Typescript <-</li>
 </ul>
 
 </p>
